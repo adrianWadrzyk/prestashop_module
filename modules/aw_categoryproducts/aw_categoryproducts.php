@@ -186,7 +186,6 @@ class Aw_CategoryProducts extends Module implements WidgetInterface
         );
     }
 
-    
     public function renderWidget($hookName, array $configuration)  {
         $template_variables = $this->getWidgetVariables($hookName, $configuration);
 
@@ -214,11 +213,9 @@ class Aw_CategoryProducts extends Module implements WidgetInterface
                 $this->context->getTranslator()
             );
 
-
             foreach($categoriesIds as $categoryId) {
                 $products = Product::getProducts($this->context->language->id, 0, 10, 'position', 'ASC', reset($categoryId), true);
                 $category_info = Category::getCategoryInformation($categoryId, $this->context->language->id);
-
                     if (!empty($products)) {
                         $productsForTemplate = [];
                         $presentationSettings->showPrices = true;
