@@ -21,13 +21,13 @@
 .single-block .block-category-title {
     font-weight: 500;
     position: relative;
-    padding-bottom: 8px;
+    margin-bottom: 0;
 }
 
 .single-block .block-category-title:after {
     content: " ";
     position: absolute;
-    bottom: 0;
+    bottom: -8px;
     left: 0;
     width: 100%;
     max-width: 50px;
@@ -84,4 +84,38 @@
     font-weight: 500;
     align-items: center;
     justify-content: center;
+}
+
+.single-block-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.custom-container-arrow-slick .arrow {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #efefef;
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+}
+
+.custom-container-arrow-slick .arrow:hover { 
+    cursor: pointer;
+}
+
+.custom-container-arrow-slick .arrow::after {
+    content: " ";
+    background: url(../img//angle-up.svg) center no-repeat;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+}
+
+.custom-container-arrow-slick .arrow.arrow_next::after {
+    transform: rotate(180deg);
 }
