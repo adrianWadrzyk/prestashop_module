@@ -1,14 +1,11 @@
 $(document).ready(function() {
-
 $(".vertical-slick-carousel").slick({
        vertical: true,
        slidesToShow: 3,
        slidesToScroll: 3,
-       infinity: true,
-       arrows: true,
        verticalSwiping: true,
        arrows: false,
-    })
+      })
 
     $('.arrow_back').click(function(e){
         $(e.currentTarget).parents(".single-block").find('.vertical-slick-carousel').slick('slickPrev');
@@ -18,4 +15,9 @@ $(".vertical-slick-carousel").slick({
         $(e.currentTarget).parents(".single-block").find('.vertical-slick-carousel').slick('slickNext');
       })
 
+      prestashop.on("updateCart", function(event) {
+        if(event.resp.hasError) {
+          alert(event.resp.errors)
+        }
+      })
 });
