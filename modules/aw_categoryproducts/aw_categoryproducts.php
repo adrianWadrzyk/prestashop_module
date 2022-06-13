@@ -117,7 +117,7 @@ class Aw_CategoryProducts extends Module implements WidgetInterface
         return $helper->generateForm(array($fields_form));
     }
 
-    protected function renderSelectetCategoryList()
+    private function renderSelectetCategoryList()
     {
         $fields_list = array(
             'id_category' => array(
@@ -247,11 +247,8 @@ class Aw_CategoryProducts extends Module implements WidgetInterface
     public function hookActionFrontControllerSetMedia() {
         $this->context->controller->registerStylesheet('aw_categoryproducts-style','modules/'.$this->name.'/views/css/style.css',['media' => 'css','priority' => 999]);
         $this->context->controller->registerStylesheet('slick-style','modules/'.$this->name.'/views/js/slick/slick.css',['media' => 'css','priority' => 100]);
-
-
         $this->context->controller->registerJavascript('slick-js', 'modules/'.$this->name.'/views/js/slick/slick.min.js', ['position' => 'bottom', 'priority' => 0]);
         $this->context->controller->registerJavascript('aw_categoryproducts-js', 'modules/'.$this->name.'/views/js/module.js', ['position' => 'bottom', 'priority' => 0]);
-
     }
 
 
@@ -266,7 +263,7 @@ class Aw_CategoryProducts extends Module implements WidgetInterface
      * @param int|false $id_category Category identifier
      * @param bool $only_active
      * @param Context|null $context
-     * @oarams bool $only_in_stock
+     * @param bool $only_in_stock
      *
      * @return array Products details
      */
