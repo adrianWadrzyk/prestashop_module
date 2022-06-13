@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12 product-line mb-2">
         <a href={$product.url} class="product-url">
-            <img src="{$product.cover.small.url}" class="product-img" alt="product miniature">
+            <img src="{$product.cover.small.url}" class="product-img" alt="product miniature {$product.name}">
             <span class="product-title">{$product.name}</span>
         </a>
         <div class="product-actions js-product-actions">
@@ -19,8 +19,8 @@
                                 aria-label="{l s='%productName% product quantity field' sprintf=['%productName%' => $product.name] d='Shop.Theme.Checkout'}" />
                         </div>
                         <div class="add">
-                            <button class="btn btn-primary add-to-cart ajax_add_to_cart_button "
-                                data-button-action="add-to-cart" type="submit" {if !$product.add_to_cart_url} disabled
+                            <button class="btn btn-primary add-to-cart ajax_add_to_cart_button"
+                                data-button-action="add-to-cart" aria-label="add to cart" type="submit" {if !$product.add_to_cart_url} disabled
                                 {/if}>
                                 <i class="material-icons shopping-cart">&#xE547;</i>
                             </button>
