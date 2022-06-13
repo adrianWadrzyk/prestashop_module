@@ -3,3 +3,4 @@
 !/modules/
 /modules/*
 !/modules/aw_categoryproducts
+!README.md
